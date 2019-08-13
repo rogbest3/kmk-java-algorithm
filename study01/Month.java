@@ -1,24 +1,22 @@
-package step1;
+package study01;
 
-import java.util.Date;
-import java.text.SimpleDateFormat;
+import java.util.Scanner;
 
-public class Month5 {
-
+public class Month {
+	
 	public static void main(String[] args) {
-
-		Date date = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+		// TODO Auto-generated method stub
 		
-		String today = sdf.format(date);
-		int flag = Integer.parseInt(today.substring(5,7));
+		int month = 0;
 		String eval = "";
 		
-		System.out.println(date);
-		System.out.println(sdf);
-		System.out.println(today);
+		System.out.println("몇월입니까?");
+		Scanner scan = new Scanner(System.in);
 		
-		switch(flag) {
+		month = scan.nextInt();
+		
+		switch( month ) {
+			
 		case 1 : eval = "1월"; break;
 		case 2 : eval = "2월"; break;
 		case 3 : eval = "3월"; break;
@@ -36,5 +34,4 @@ public class Month5 {
 		}
 		System.out.println(eval);
 	}
-
 }

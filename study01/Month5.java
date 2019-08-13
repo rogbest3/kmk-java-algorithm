@@ -1,12 +1,12 @@
-package step1;
+package study01;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-public class Month4 {
+public class Month5 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
 		
@@ -14,6 +14,8 @@ public class Month4 {
 		int flag = Integer.parseInt(today.substring(5,7));
 		String eval = "";
 		
+		System.out.println(date);
+		System.out.println(sdf);
 		System.out.println(today);
 		
 		switch(flag) {
@@ -29,8 +31,10 @@ public class Month4 {
 		case 10 : eval = "10월"; break;
 		case 11 : eval = "11월"; break;
 		case 12 : eval = "12월"; break;
+		
 		default : break;
 		}
 		System.out.println(eval);
 	}
+
 }
