@@ -1,5 +1,5 @@
 package homework02;
-
+import java.util.Scanner;
 public class ArithmeticCalculator {
 
 	public static void main(String[] args) {
@@ -16,6 +16,35 @@ public class ArithmeticCalculator {
 		10 / 3 = 3 [1] 나눗셈은 이렇게 나오면 된답니다.
 		그러면 []값이 나머지인지는 교수가 이미 알고 있겠답니다.
 		*/
-	}
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("숫자 입력");
+		int inputNum1 = scanner.nextInt();
+		
+		System.out.println("연산자 입력");
+		String operator = scanner.next();
+		
+		System.out.println("숫자 입력");
+		int inputNum2 = scanner.nextInt();
+		int result = 0, remainder = 0;
+		
+		switch(operator) {
+		case "+" : result = inputNum1 + inputNum2; break;
+		case "-" : result = inputNum1 - inputNum2; break;
+		case "*" : result = inputNum1 * inputNum2; break;
+		case "/" : result = inputNum1 / inputNum2; remainder = inputNum1 % inputNum2; break;
+		default : System.out.println("연산자 입력 오류"); return;
+		}
 
+		System.out.printf("%d %s %d = %d", inputNum1, operator, inputNum2, result );
+		
+		if( operator.equals("/") ) {
+			System.out.printf(" [%d]\n", remainder );
+		}
+	/**	switch(operator) {
+		case "/" : System.out.printf(" [%d]\n", remainder ); break;
+		default : break;
+		}
+	*/	
+	}
 }

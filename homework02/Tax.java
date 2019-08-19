@@ -1,5 +1,5 @@
 package homework02;
-
+import java.util.Scanner;
 public class Tax {
 
 	public static void main(String[] args) {
@@ -13,6 +13,18 @@ public class Tax {
 			관리자가 쉽게 적용가능하도록 만들어 주세요.
 			현재는 세율이 9.7프로라고 합니다.
 		 */
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("이름을 입력해 주세요.");
+		String name = scan.next(); 
+		System.out.println("연봉을 입력해 주세요.");
+		int annualIncome = scan.nextInt();
+
+		double taxRate = 9.7;
+		double tax = (double)annualIncome * taxRate * 0.01;
+		
+		System.out.println(String.format("연봉 %d만원을 받으시는 %s님께서 납부할 세금은 %.1f만원입니다.\n", annualIncome, name, tax));
+		
 	}
 
 }

@@ -1,5 +1,5 @@
 package homework02;
-
+import java.util.Scanner;
 public class HowMuch {
 
 	public static void main(String[] args) {
@@ -19,13 +19,34 @@ public class HowMuch {
 			> 스캐너입력값 > 5
 			5개 주세요
 			총 금액은 500원 입니다
-			비싸요, 10% 깎아주세요.
+			비싸요,(자동)10% 깎아주세요.
 			그럼 450원만 주세요"
 			
 			[참고] 깍아주는 공식
 			int dc = total / 10;
 			total = total - dc;
 		 */
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("얼마에요?");
+		int inputMoney = scanner.nextInt();
+		System.out.println(String.format("%d원 입니다.", inputMoney));
+		
+		System.out.println("몇개 드릴까요?");
+		int num = scanner.nextInt();
+		System.out.println(String.format("%d개 주세요.", num));
+		
+		int total = inputMoney * num;
+		System.out.println(String.format("총 금액은 %d원 입니다.", total));
+		
+		System.out.println("비싸요(할인율 입력)");
+		int dc = scanner.nextInt();
+		System.out.println(dc + "% 깍아주세요.");
+	
+		dc = total * dc / 100;
+	//	System.out.println(dc);
+		System.out.printf(String.format("그럼 %d원만 주세요.", total - dc ));
+		
 	}
 
 }

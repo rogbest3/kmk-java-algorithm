@@ -1,6 +1,6 @@
 package homework02;
 import java.util.Scanner;
-public class ScoreCalc {
+public class ScoreCalc2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -29,7 +29,7 @@ public class ScoreCalc {
 		
 		int series = 0, input = 0;
 		String sequence = "";
-		
+/**		
 		System.out.println("더하시려는 숫자를 입력하세요(종료는 -1)");
 		input = scanner.nextInt();
 		sequence += input;
@@ -47,5 +47,15 @@ public class ScoreCalc {
 				series += input;
 			}
 		}
+	*/	
+		for(;input != -1;) {
+			System.out.println("더하시려는 숫자를 입력하세요(종료는 -1)");
+			input = scanner.nextInt();
+			sequence += " + " + input;
+			series += input;
+		}
+		sequence += " = ";
+		System.out.println(sequence + series);
+		
 	}
 }

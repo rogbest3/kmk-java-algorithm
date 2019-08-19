@@ -1,5 +1,6 @@
 package homework02;
-
+import java.util.Scanner;
+import java.lang.Math;
 public class Ranking {
 
 	public static void main(String[] args) {
@@ -23,6 +24,43 @@ public class Ranking {
 			
 			라고 출력시켜주세요.
 		 */
+		Scanner scanner = new Scanner(System.in);
+		String[] string = { "A", "B", "C"};
+		int[] num = { 1, 2, 3 };
+		double[] record = new double[3];
+		double recodTemp = 0.0;
+		String stringTemp = "";
+		
+		for(int i=0;i<3; i++) {
+			System.out.printf("%s 선수 기록 입력\n", string[i]);
+			record[i] = scanner.nextDouble();
+		}
+		for(int i=0;i<2; i++) {
+			if(record[i] > record[i+1]) {
+				recodTemp = record[i];
+				record[i] = record[i+1];
+				record[i+1] = recodTemp;
+				
+				stringTemp = string[i];
+				string[i] = string[i+1];
+				string[i+1] = stringTemp;
+			}
+		}
+
+		if(record[0] > record[1]) {
+			recodTemp = record[0];
+			record[0] = record[1];
+			record[1] = recodTemp;
+			
+			stringTemp = string[0];
+			string[0] = string[1];
+			string[1] = stringTemp;
+		}
+		
+		System.out.println("##### 성적 랭킹 #####\n");
+		for(int i=0;i<3; i++) {
+			System.out.printf("%d등 : %s 선수 기록 (%.1f초)\n", num[i], string[i], record[i]);
+		}
 	}
 
 }
