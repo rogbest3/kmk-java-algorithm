@@ -25,7 +25,8 @@ public class TimeCalc {
 			minute 		= hourTemp * 60;
 			minuteTemp 	= minute - Math.floor(minute);
 			second 		= minuteTemp * 60;
-			
+			System.out.println(minute);
+			System.out.println(second);
 			System.out.println(String.format("%.0f시간 %.0f분 %.0f초\n", Math.floor(hour), Math.floor(minute), second ));
 		}
 	}

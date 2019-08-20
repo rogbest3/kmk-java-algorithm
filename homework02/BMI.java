@@ -32,7 +32,7 @@ public class BMI {
 		double bmi = weight / (height * height);
 		bmi = Math.round(bmi * 100.0)/100.0;
 		
-		System.out.printf("%s님은 현재 BMI 수치가 ", name);
+		System.out.printf("%s님은 현재 BMI 수치가 %.2f ", name, bmi);
 		System.out.print(bmi);
 		
 		if( bmi >= 30.0 ) {
