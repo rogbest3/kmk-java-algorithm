@@ -1,4 +1,4 @@
-package study05;
+package study06;
 
 public class Member {
 	// private 다른 클래스에서 접근 불가 (보안이 좋음)

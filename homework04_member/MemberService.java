@@ -1,8 +1,6 @@
-package study05;
+package homework04_member;
 
-import javax.print.attribute.standard.MediaSize.NA;
-
-public class Service {
+public class MemberService {
 	public String getBMI(Member member) {
 		String result = "";
 		String name = member.getName();
@@ -21,30 +19,6 @@ public class Service {
 			result = "저체중";
 		}
 		return String.format("%s님의 BMI 수치는 %.2f로 %s입니다.", name, bmi, result);
-	}
-	
-	public String getReportCard(Member member) {
-		String result = "";
-		String passOrFail = "";
-		String name = member.getName();
-		int kor = member.getKor();
-		int eng = member.getEng();
-		int math = member.getMath();
-		
-		int sum = kor + eng + math;
-		double avr = sum / 3;
-		
-		if(avr >= 90.0) {
-			passOrFail = "장학생";
-		}else if(avr >= 70){
-			passOrFail = "합격";
-		}else {
-			passOrFail = "불합격";
-		}
-		result = String.format("학생     국어     영어     수학     총점     평균     합격여부\n"
-				+ "====================================================\n"
-				+ "%s   %d   %d   %d   %d   %.0f   %s", name, kor, eng, math, sum, avr, passOrFail );
-		return result;
 	}
 
 	public String getTax(Member member) {

@@ -1,47 +1,54 @@
 package practice;
 import java.util.Scanner;
-import practice.Student;
 public class Engine {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
-		Student student = new Student();
-		int flag = 0;
+		Member member = null;	//	new Member();
+		Service service = null;	//	new Service();
 		
 		while(true) {
-			System.out.println("메뉴 : 0.종료 1.AC 2.BMI 3.HowMuch 4.Join 5.LeapYear 6.MonthEndDay 7.PassOrFail 8.Ranking 9.ReportCasd 10.ScoreCalc 11.Tax 12.TimeCalc");
-			flag = scanner.nextInt();
-			
-			switch(flag) {
-			case 0 : System.out.println("종료"); return;
-			case 4 :
-				System.out.println("join");
-				String[] input = new String[8];
-				String[] result = new String[8];
+			System.out.println("0.종료 1.회원정보 2.Join 3.BMI 4.ReportCard 5.Tax");
+			switch(scanner.nextInt()) {
+			case 0 :  return;
+			case 1 : 
+				member = new Member();
+				System.out.println("회원정보기입");
+				System.out.println("아이디 : ");
+				member.setId(scanner.next());
+				System.out.println("비번 : ");
+				member.setPw(scanner.next());
+				System.out.println("이름 : ");
+				member.setName(scanner.next());
+				System.out.println("생년월일 : ");
+				member.setSsn(scanner.next());
+				System.out.println("성인여부(성인:true 미성년:false)");
+				member.setStatus(scanner.next());
+				System.out.println("키");
+				member.setHeight(scanner.nextDouble());
+				System.out.println("몸무게");
+				member.setWeight(scanner.nextDouble());
+				System.out.println("혈액형");
+				member.setBlood(scanner.next());
 				
-				System.out.println("=== 회원 가입 ===");
-				for(int i=0;i<8;i++) {
-					System.out.printf("%s : ", student.getinformation(i));
-					input[i] = scanner.next();
-				}
-				result = student.join(input);
-				System.out.println("=== 회원 정보 ===");
-				for(int i=0;i<8;i++) {
-					System.out.println(result[i]);
-				}
+				System.out.println(member.toString());
 				break;
-			case 5 :
-				String result1 = "";
+			case 2 : 
+				System.out.println("Join");
 				
-				System.out.println("LeapYear");
+				break;	
+			case 3 : 
+				service = new Service();
+				System.out.println("BMI");
+				System.out.println(service.getBmi(member));
+				break;	
+			case 4 : 
+	
+				break;	
+			case 5 : 
 				
-				System.out.println("연도를 입력");
-				result1 = student.getLeapYear(scanner.nextInt());
-				System.out.println(result1);
-				break;
+				break;	
 			}
-			
 		}
 	}
 }

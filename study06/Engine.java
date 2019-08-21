@@ -1,5 +1,7 @@
-package study05;
+package study06;
 import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 public class Engine {
 
 	public static void main(String[] args) {
@@ -7,21 +9,14 @@ public class Engine {
 		Member member = null;		// member1, member2, ... 로 회원을 추가 만듬
 		Service service = null;
 		while(true) {
-			System.out.println("0.종료 1.회원정보기입 2.Join 3.Search 4.BMI 5.ReportCard 6.Tax");
-			switch(scanner.nextInt()) {
-			case 0 : System.out.println("종료");
-			case 1 : 
+			switch(JOptionPane.showInputDialog("0.종료 1.회원정보기입 2.Join 3.Search 4.BMI 5.ReportCard 6.Tax")) {
+			case "0" : JOptionPane.showInputDialog("종료"); return;
+			case "1" : 
 				member = new Member();
-				System.out.println("회원가입");
-				
-				System.out.println("아이디");
-				member.setId(scanner.next());
-				
-				System.out.println("비밀번호");
-				member.setPw(scanner.next());
-				
-				System.out.println("이름");
-				member.setName(scanner.next());
+				JOptionPane.showInputDialog("회원가입");
+				member.setId(JOptionPane.showInputDialog("ID입력"));
+				member.setPw(JOptionPane.showInputDialog("비밀번호입력"));
+				member.setName(JOptionPane.showInputDialog("이름"));
 				
 				System.out.println("주민번호");
 				member.setSsn(scanner.next());
@@ -29,7 +24,7 @@ public class Engine {
 				System.out.println("성인여부(성인:true 미성년:false)");
 				member.setStatus(scanner.next());
 				
-				System.out.println("키");
+		/*		System.out.println("키");
 				member.setHeight(scanner.nextDouble());
 				
 				System.out.println("몸무게");
@@ -49,13 +44,15 @@ public class Engine {
 				
 				System.out.println("연봉");
 				member.setSalary(scanner.nextInt());
-				break;
 				
-			case 2 :	
 				System.out.println(member.toString());
+		*/		break;
+				
+			case "2" :	
+				JOptionPane.showMessageDialog(null, "2.마이페이지\n" + member.toString());
 				break;
 
-			case 3 :
+			case "3" :
 				member = new Member();
 				System.out.println("아이디, 이름을 입력하면 비번과 주민번호 알려줌");
 				String searchName = scanner.next();
@@ -68,20 +65,20 @@ public class Engine {
 				}
 				break;
 				
-			case 4 :
+			case "4" :
 			//	member = new Member();				//	1번에서 수행됨
 				service = new Service();
 				System.out.println("BMI 구하기");
 				System.out.println(service.getBMI(member));
 				
 				break;
-			case 5 :
+			case "5" :
 			//	member = new Member();
 				service = new Service();
 				System.out.println("ReportCard");
 				System.out.println(service.getReportCard(member));
 				break;
-			case 6 :
+			case "6" :
 			//	member = new Member();
 				service = new Service();
 				System.out.println("Tax");

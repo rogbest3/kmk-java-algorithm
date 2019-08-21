@@ -1,10 +1,10 @@
-package study05;
+package homework04_member;
 
 public class Member {
 	// private 다른 클래스에서 접근 불가 (보안이 좋음)
 	private String name, id, pw, ssn, blood, status;	// 공용으로 쓰기 때문에 초기화하면 안됨
 	private double height, weight;						// 프로퍼티 선언
-	private int kor, eng, math, salary;
+	private int salary;
 	
 	public void setName(String name) {	// 위에 선언한 변수
 		this.name = name;				// 세터, 쓰기		
@@ -13,7 +13,7 @@ public class Member {
 		return this.name;				// set이 기록한것을 get이 알고있음
 	} 
 	
-public void setId(String id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getId() {
@@ -60,31 +60,14 @@ public void setId(String id) {
 	public double getHeight() {
 		return this.height;
 	}
-	
-	public void setKor(int kor) {
-		this.kor = kor;
-	}
-	public int getKor() {
-		return this.kor;
-	}
-	public void setEng(int eng) {
-		this.eng = eng;
-	}
-	public int getEng() {
-		return this.eng;
-	}
-	public void setMath(int math) {
-		this.math = math;
-	}
-	public int getMath() {
-		return this.math;
-	}
+
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
 	public int getSalary() {
 		return this.salary;
 	}
+
 	//	toString	컨트롤 + 스페이스  -> toString() 선택
 	@Override
 	public String toString() {
@@ -103,9 +86,7 @@ public void setId(String id) {
 				+ "아이디 : %s \n"
 				+ "주민번호 : %s \n"
 				+ "성인여부 : %s \n"
-				+ "키 : %.1fcm \n"
-				+ "몸무게 : %.1fkg \n"
 				+ "혈액형 : %s형\n",
-				name, pw, id, ssn, statusTemp, height, weight, blood );
+				name, pw, id, ssn, statusTemp, blood );
 	}
 }
